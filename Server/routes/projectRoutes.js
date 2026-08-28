@@ -1,4 +1,6 @@
 import express from 'express';
+import multer from 'multer';
+const upload = multer({ storage: multer.memoryStorage() });
 
 import {
   getProjects,
@@ -133,11 +135,7 @@ router.delete(
 // ======================================================
 
 // POST /api/projects/:id/cover-photo
-router.post(
-  '/:id/cover-photo',
-  verifyToken,
-  uploadProjectCover
-);
+router.post('/:id/cover-photo', verifyToken, upload.single('coverImage'), uploadProjectCover);
 
 // ======================================================
 // COMMENTS
