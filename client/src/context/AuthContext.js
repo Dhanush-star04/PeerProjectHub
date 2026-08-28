@@ -64,7 +64,7 @@ export function AuthProvider({ children }) {
 
   const syncUser = async (idToken) => {
     try {
-      await fetch('http://localhost:5000/api/users/sync', {
+      await fetch('https://peerprojecthub.onrender.com/api/users/sync', {
         method: 'POST',
         headers: {
           Authorization: `Bearer ${idToken}`,

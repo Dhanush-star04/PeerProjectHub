@@ -2,7 +2,7 @@ import axios from 'axios';
 import { auth } from '../context/AuthContext';
 
 const API = axios.create({
-  baseURL: 'http://localhost:5000/api',
+  baseURL: 'https://peerprojecthub.onrender.com/api',
 });
 
 // =========================================================
