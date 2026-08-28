@@ -6,9 +6,9 @@ import { createNotification } from './notificationController.js';
 // GET /api/projects/:projectId/comments — list comments for a project
 export const getComments = async (req, res) => {
   try {
-    const comments = await Comment.find({ project: req.params.projectId }).sort({
-      createdAt: -1,
-    });
+    const comments = await Comment.find({ project: req.params.projectId })
+      .populate('author', 'profileImage')
+      .sort({ createdAt: -1 });
     res.status(200).json(comments);
   } catch (error) {
     res.status(500).json({ message: 'Failed to fetch comments', error: error.message });

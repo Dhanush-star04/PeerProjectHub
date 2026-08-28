@@ -694,10 +694,18 @@ export default function ProjectDetail() {
                     className="rounded-2xl border border-brand-100 bg-white/80 p-5 transition hover:border-brand-200 hover:shadow-sm"
                   >
                     <div className="flex items-start gap-3">
-                      <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-brand-800 to-brand-600 text-sm font-bold text-white">
-                        {comment.authorName
-                          ? comment.authorName.charAt(0).toUpperCase()
-                          : '?'}
+                      <div className="flex h-10 w-10 shrink-0 items-center justify-center overflow-hidden rounded-xl bg-gradient-to-br from-brand-800 to-brand-600 text-sm font-bold text-white">
+                        {comment.author?.profileImage ? (
+                          <img
+                            src={comment.author.profileImage}
+                            alt={comment.authorName}
+                            className="h-full w-full object-cover"
+                          />
+                        ) : comment.authorName ? (
+                          comment.authorName.charAt(0).toUpperCase()
+                        ) : (
+                          '?'
+                        )}
                       </div>
 
                       <div className="min-w-0 flex-1">

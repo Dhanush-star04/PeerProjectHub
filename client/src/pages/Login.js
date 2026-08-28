@@ -49,10 +49,10 @@ export default function Login() {
               <img
                 src={logo}
                 alt="PeerProjectHub logo"
-                className="h-10 w-10 rounded-xl object-cover"
+                className="h-14 w-14 rounded-xl object-cover"
               />
 
-              <span className="text-lg font-bold tracking-tight">
+              <span className="text-2xl font-bold tracking-tight">
                 PeerProjectHub
               </span>
             </div>
@@ -95,10 +95,10 @@ export default function Login() {
               <img
                 src={logo}
                 alt="PeerProjectHub logo"
-                className="h-10 w-10 rounded-xl object-cover"
+                className="h-14 w-14 rounded-xl object-cover"
               />
 
-              <span className="font-bold tracking-tight text-slate-950">
+              <span className="text-xl font-bold tracking-tight text-slate-950">
                 PeerProjectHub
               </span>
             </div>

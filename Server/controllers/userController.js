@@ -171,6 +171,12 @@ export const updateProfile = async (req, res) => {
 
     if (name !== undefined) {
       user.name = name.trim();
+
+      // Keep creatorName in sync on all of this user's projects
+      await Project.updateMany(
+        { creator: user._id },
+        { creatorName: user.name }
+      );
     }
 
     // =====================================================
