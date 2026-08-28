@@ -7,7 +7,7 @@ import { createNotification } from './notificationController.js';
 export const getComments = async (req, res) => {
   try {
     const comments = await Comment.find({ project: req.params.projectId })
-      .populate('author', 'profileImage')
+      .populate('author', 'profileImage email')
       .sort({ createdAt: -1 });
     res.status(200).json(comments);
   } catch (error) {

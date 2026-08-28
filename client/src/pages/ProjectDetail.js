@@ -272,9 +272,7 @@ export default function ProjectDetail() {
 
   const userEmail = localStorage.getItem('userEmail');
 
-  const currentUserName = userEmail ? userEmail.split('@')[0] : '';
-
-  const isOwner = currentUserName && project.creatorName === currentUserName;
+  const isOwner = userEmail && project.creator?.email === userEmail;
 
   // =========================================================
   // RATING DATA
@@ -717,7 +715,7 @@ export default function ProjectDetail() {
                               {new Date(comment.createdAt).toLocaleDateString()}
                             </p>
 
-                            {(comment.authorName === currentUserName || isOwner) && (
+                            {(comment.author?.email === userEmail || isOwner) && (
                               <button
                                 type="button"
                                 onClick={() => handleDeleteComment(comment._id)}

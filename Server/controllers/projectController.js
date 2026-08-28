@@ -76,7 +76,7 @@ export const getProjectById = async (req, res) => {
   try {
     const project = await Project.findById(req.params.id).populate(
       'creator',
-      'profileImage'
+      'profileImage email'
     );
 
     if (!project) {
